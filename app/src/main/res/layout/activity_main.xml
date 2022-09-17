@@ -29,6 +29,7 @@
             android:hint="@string/_8_964_1552"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
+            android:singleLine="true"
             android:textColorHint="#78909C" />
 
         <Button
