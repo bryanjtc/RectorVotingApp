@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
         votar = findViewById(R.id.btn_votar);
         votar.setOnClickListener(view -> {
             if (cedula.getText().toString().equals("")) {
-                Toast.makeText(getApplicationContext(), "Ingrese su cedula",
+                Toast.makeText(getApplicationContext(), "Ingrese su cédula",
                         Toast.LENGTH_LONG).show();
             } else if (!cedula.getText().toString().contains("-")) {
-                Toast.makeText(getApplicationContext(), "Debe ingresar su cedula con guion",
+                Toast.makeText(getApplicationContext(), "Debe ingresar su cédula con guion",
                         Toast.LENGTH_LONG).show();
             } else {
                 String[] parts = cedula.getText().toString().split("-");
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 String part3 = Strings.padStart(parts[2], 6, '0');
                 String cedulaZeros = part1 + "-" + part2 + "-" + part3;
                 Query queryCedula = myRef.orderByChild("cedula").equalTo(cedulaZeros);
-                Log.d("Cedula", cedulaZeros);
+                Log.d("Cédula", cedulaZeros);
                 queryCedula.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), Boolean.TRUE.equals(votado) ? "Ha votado" : "No ha votado", Toast.LENGTH_LONG).show();
                             }
                         } else {
-                            Toast.makeText(getApplicationContext(), "Cedula no encontrada", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Cédula no encontrada", Toast.LENGTH_LONG).show();
                             Log.d("Firebase database", "No existe");
                         }
                     }
