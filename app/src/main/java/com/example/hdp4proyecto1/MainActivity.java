@@ -34,12 +34,10 @@ public class MainActivity extends AppCompatActivity {
             if (cedula.getText().toString().equals("")) {
                 Toast.makeText(getApplicationContext(), "Ingrese su cedula",
                         Toast.LENGTH_LONG).show();
-            }
-            else if (!cedula.getText().toString().contains("-")) {
+            } else if (!cedula.getText().toString().contains("-")) {
                 Toast.makeText(getApplicationContext(), "Debe ingresar su cedula con guion",
                         Toast.LENGTH_LONG).show();
-            }
-            else {
+            } else {
                 String[] parts = cedula.getText().toString().split("-");
                 String part1 = Strings.padStart(parts[0], 2, '0');
                 String part2 = Strings.padStart(parts[1], 4, '0');
@@ -53,14 +51,15 @@ public class MainActivity extends AppCompatActivity {
                         if (dataSnapshot.exists()) {
                             for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                                 String uid = childSnapshot.getKey();
+                                Boolean votado = childSnapshot.child("votado").getValue(Boolean.class);
                                 Log.d("Firebase database", "Key is: " + uid);
+                                Toast.makeText(getApplicationContext(), Boolean.TRUE.equals(votado) ? "Ha votado" : "No ha votado", Toast.LENGTH_LONG).show();
                             }
                         } else {
                             Toast.makeText(getApplicationContext(), "Cedula no encontrada", Toast.LENGTH_LONG).show();
                             Log.d("Firebase database", "No existe");
                         }
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
                         // Failed to read value
