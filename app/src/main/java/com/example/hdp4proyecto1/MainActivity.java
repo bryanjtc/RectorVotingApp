@@ -17,6 +17,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class MainActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -38,34 +41,44 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Debe ingresar su cédula con guion",
                         Toast.LENGTH_LONG).show();
             } else {
-                String[] parts = cedula.getText().toString().split("-");
-                String part1 = Strings.padStart(parts[0], 2, '0');
-                String part2 = Strings.padStart(parts[1], 4, '0');
-                String part3 = Strings.padStart(parts[2], 6, '0');
-                String cedulaZeros = part1 + "-" + part2 + "-" + part3;
-                Query queryCedula = myRef.orderByChild("cedula").equalTo(cedulaZeros);
-                Log.d("Cédula", cedulaZeros);
-                queryCedula.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                                String uid = childSnapshot.getKey();
-                                Boolean votado = childSnapshot.child("votado").getValue(Boolean.class);
-                                Log.d("Firebase database", "Key is: " + uid);
-                                Toast.makeText(getApplicationContext(), Boolean.TRUE.equals(votado) ? "Ha votado" : "No ha votado", Toast.LENGTH_LONG).show();
+                String regex = "^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\\d{1,4})-(\\d{1,6})$";
+                Pattern pattern = Pattern.compile(regex);
+                Matcher matcher = pattern.matcher(cedula.getText().toString());
+                boolean matched = matcher.find();
+                if (matched) {
+                    String[] parts = cedula.getText().toString().split("-");
+                    String part1 = Strings.padStart(parts[0], 2, '0');
+                    String part2 = Strings.padStart(parts[1], 4, '0');
+                    String part3 = Strings.padStart(parts[2], 6, '0');
+                    String cedulaZeros = part1 + "-" + part2 + "-" + part3;
+                    Query queryCedula = myRef.orderByChild("cedula").equalTo(cedulaZeros);
+                    Log.d("Cédula", cedulaZeros);
+                    queryCedula.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                                    String uid = childSnapshot.getKey();
+                                    Boolean votado = childSnapshot.child("votado").getValue(Boolean.class);
+                                    Log.d("Firebase database", "Key is: " + uid);
+                                    Toast.makeText(getApplicationContext(), Boolean.TRUE.equals(votado) ? "Ha votado" : "No ha votado", Toast.LENGTH_LONG).show();
+                                }
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Cédula no encontrada", Toast.LENGTH_LONG).show();
+                                Log.d("Firebase database", "No existe");
                             }
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Cédula no encontrada", Toast.LENGTH_LONG).show();
-                            Log.d("Firebase database", "No existe");
                         }
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        // Failed to read value
-                        Log.w("Firebase database", "Failed to read value.", error.toException());
-                    }
-                });
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            // Failed to read value
+                            Log.w("Firebase database", "Failed to read value.", error.toException());
+                        }
+                    });
+                } else {
+                    Toast.makeText(getApplicationContext(), "Debe ingresar una cédula válida",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
 
