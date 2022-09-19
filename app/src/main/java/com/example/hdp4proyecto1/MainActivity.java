@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     String part2 = Strings.padStart(parts[1], 4, '0');
                     String part3 = Strings.padStart(parts[2], 6, '0');
                     String cedulaZeros = part1 + "-" + part2 + "-" + part3;
-                    Query queryCedula = myRef.orderByChild("cedula").equalTo(cedulaZeros);
+                    Query queryCedula = myRef.orderByChild("Cedula").equalTo(cedulaZeros);
                     Log.d("Cédula", cedulaZeros);
                     queryCedula.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                             if (dataSnapshot.exists()) {
                                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                                     String uid = childSnapshot.getKey();
-                                    Boolean votado = childSnapshot.child("votado").getValue(Boolean.class);
+                                    Boolean votado = childSnapshot.child("Votado").getValue(Boolean.class);
                                     Log.d("Firebase database", "Key is: " + uid);
                                     Toast.makeText(getApplicationContext(), Boolean.TRUE.equals(votado) ? "Ha votado" : "No ha votado", Toast.LENGTH_LONG).show();
                                 }
