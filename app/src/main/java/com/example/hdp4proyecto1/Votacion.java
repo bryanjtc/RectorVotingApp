@@ -28,8 +28,6 @@ public class Votacion extends AppCompatActivity {
         AtomicReference<Integer> seleccion = new AtomicReference<>(-1);
         // Todo inicializar radiobuttons y button con los id del layout
 
-        // Todo utilizar variable key del intent
-        myRef.child("key").child("Votado").setValue(true);
         rbCandidato1.setOnClickListener(view -> seleccion.set(0));
         rbCandidato2.setOnClickListener(view -> seleccion.set(1));
         rbCandidato3.setOnClickListener(view -> seleccion.set(2));
@@ -37,6 +35,8 @@ public class Votacion extends AppCompatActivity {
             if (seleccion.get() != -1) {
                 // Todo utilizar variable key del intent
                 myRef.child("key").child("Voto").setValue(candidatos[seleccion.get()]);
+                // Todo utilizar variable key del intent
+                myRef.child("key").child("Votado").setValue(true);
                 Log.d("Votacion", "Voto es: " + candidatos[seleccion.get()]);
             } else {
                 Toast.makeText(getApplicationContext(), "Debe seleccionar un candidato",
