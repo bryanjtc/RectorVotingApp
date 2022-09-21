@@ -35,35 +35,43 @@ public class MainActivity extends AppCompatActivity {
         btnVotar = findViewById(R.id.btn_votar);
         btnVotar.setOnClickListener(view -> {
             if (etCedula.getText().toString().equals("")) {
+                // Revisa si no ingresa ningun valor en el campo
                 Toast.makeText(getApplicationContext(), "Ingrese su cédula",
                         Toast.LENGTH_LONG).show();
             } else if (!etCedula.getText().toString().contains("-")) {
+                // Revisa si ingresa la cedula sin guiones
                 Toast.makeText(getApplicationContext(), "Debe ingresar su cédula con guion",
                         Toast.LENGTH_LONG).show();
             } else {
+                // Revisa si la cedula ingresada coincide con el formato
                 String regex = "^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\\d{1,4})-(\\d{1,6})$";
                 Pattern pattern = Pattern.compile(regex);
                 Matcher matcher = pattern.matcher(etCedula.getText().toString());
                 boolean matched = matcher.find();
                 if (matched) {
+                    // Se divide la cedula en tres partes, utilizando el simbolo - como separador y se le agregan ceros al inicio a cada parte
                     String[] parts = etCedula.getText().toString().split("-");
                     String part1 = Strings.padStart(parts[0], 2, '0');
                     String part2 = Strings.padStart(parts[1], 4, '0');
                     String part3 = Strings.padStart(parts[2], 6, '0');
                     String cedulaZeros = part1 + "-" + part2 + "-" + part3;
+                    // Se busca la cedula con los ceros en la base de datos de firebase
                     Query queryCedula = myRef.orderByChild("Cedula").equalTo(cedulaZeros);
                     Log.d("Cédula", cedulaZeros);
                     queryCedula.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             if (dataSnapshot.exists()) {
+                                // Si la cedula existe se busca la llave para identificar la ubicacion de la cedula y si ha votado o no usando el valor de campo votado
                                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                                     String uid = childSnapshot.getKey();
-                                    Boolean votado = childSnapshot.child("Votado").getValue(Boolean.class);
                                     Log.d("Firebase database", "Key is: " + uid);
+                                    Boolean votado = childSnapshot.child("Votado").getValue(Boolean.class);
+                                    // Todo eliminar toast
                                     Toast.makeText(getApplicationContext(), Boolean.TRUE.equals(votado) ? "Ha votado" : "No ha votado", Toast.LENGTH_LONG).show();
                                 }
                             } else {
+                                // Si no existe la cedula se muestra en log de debug y en un toast
                                 Toast.makeText(getApplicationContext(), "Cédula no encontrada", Toast.LENGTH_LONG).show();
                                 Log.d("Firebase database", "No existe");
                             }
@@ -71,11 +79,12 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-                            // Failed to read value
+                            // Si existe algun error con la base de datos al leer la cedula se muestra un warning en log
                             Log.w("Firebase database", "Failed to read value.", error.toException());
                         }
                     });
                 } else {
+                    // Si la cedula no coincide con el formato se muestra un toast
                     Toast.makeText(getApplicationContext(), "Debe ingresar una cédula válida",
                             Toast.LENGTH_LONG).show();
                 }

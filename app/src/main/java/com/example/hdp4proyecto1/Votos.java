@@ -32,45 +32,53 @@ public class Votos extends AppCompatActivity {
         double totalVotos, porcentajeVivian, porcentajeMartin, porcentajeOmar;
         // Todo inicializar seekbar y button con los id del layout
 
-        Query queryVivian = myRef.orderByChild("Cedula").equalTo("Vivían Valenzuela");
-        Query queryMartin = myRef.orderByChild("Cedula").equalTo("Martín Candanedo");
-        Query queryOmar = myRef.orderByChild("Cedula").equalTo("Omar Aizpurua");
+        // Se obtienen la data de la base de datos donde el campo voto es igual a los nombres de los candidatos
+        Query queryVivian = myRef.orderByChild("Voto").equalTo("Vivían Valenzuela");
+        Query queryMartin = myRef.orderByChild("Voto").equalTo("Martín Candanedo");
+        Query queryOmar = myRef.orderByChild("Voto").equalTo("Omar Aizpurua");
         queryVivian.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // Se cuenta la cantidad de veces donde el valor del campo voto de la base de datos es Vivian Valenzuela y se guarda el valor
                 Log.i("Votos", "Conteo para Vivian: "+snapshot.getChildrenCount());
                 votosVivian = snapshot.getChildrenCount();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                // Si existe algun error con la base de datos al leer el nombre del candidato se muestra un warning en log
                 Log.w("Firebase database", "Failed to read value.", error.toException());
             }
         });
         queryMartin.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // Se cuenta la cantidad de veces donde el valor del campo voto de la base de datos es Martin Candanedo y se guarda el valor
                 Log.i("Votos", "Conteo para Martian: "+snapshot.getChildrenCount());
                 votosMartin = snapshot.getChildrenCount();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                // Si existe algun error con la base de datos al leer el nombre del candidato se muestra un warning en log
                 Log.w("Firebase database", "Failed to read value.", error.toException());
             }
         });
         queryOmar.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // Se cuenta la cantidad de veces donde el valor del campo voto de la base de datos es Omar Aizpura y se guarda el valor
                 Log.i("Votos", "Conteo para Omar: "+snapshot.getChildrenCount());
                 votosOmar = snapshot.getChildrenCount();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                // Si existe algun error con la base de datos al leer el nombre del candidato se muestra un warning en log
                 Log.w("Firebase database", "Failed to read value.", error.toException());
             }
         });
+        // Se calculan la cantidad de votos total, el porcentaje de votos para cada candidatos y se guardan en el seekbar y el textView perteneciente a cada candidato
         totalVotos = votosVivian + votosMartin + votosOmar;
         porcentajeVivian = (votosVivian/totalVotos)*100;
         porcentajeMartin = (votosMartin/totalVotos)*100;
