@@ -24,29 +24,29 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("data");
-    EditText cedula;
-    Button votar;
+    EditText etCedula;
+    Button btnVotar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        cedula = findViewById(R.id.et_cedula);
-        votar = findViewById(R.id.btn_votar);
-        votar.setOnClickListener(view -> {
-            if (cedula.getText().toString().equals("")) {
+        etCedula = findViewById(R.id.et_cedula);
+        btnVotar = findViewById(R.id.btn_votar);
+        btnVotar.setOnClickListener(view -> {
+            if (etCedula.getText().toString().equals("")) {
                 Toast.makeText(getApplicationContext(), "Ingrese su cédula",
                         Toast.LENGTH_LONG).show();
-            } else if (!cedula.getText().toString().contains("-")) {
+            } else if (!etCedula.getText().toString().contains("-")) {
                 Toast.makeText(getApplicationContext(), "Debe ingresar su cédula con guion",
                         Toast.LENGTH_LONG).show();
             } else {
                 String regex = "^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\\d{1,4})-(\\d{1,6})$";
                 Pattern pattern = Pattern.compile(regex);
-                Matcher matcher = pattern.matcher(cedula.getText().toString());
+                Matcher matcher = pattern.matcher(etCedula.getText().toString());
                 boolean matched = matcher.find();
                 if (matched) {
-                    String[] parts = cedula.getText().toString().split("-");
+                    String[] parts = etCedula.getText().toString().split("-");
                     String part1 = Strings.padStart(parts[0], 2, '0');
                     String part2 = Strings.padStart(parts[1], 4, '0');
                     String part3 = Strings.padStart(parts[2], 6, '0');
