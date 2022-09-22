@@ -36,9 +36,9 @@ public class Votos extends AppCompatActivity {
         sbVivian = findViewById(R.id.seek_bar1);
         sbMartin = findViewById(R.id.seek_bar2);
         sbOmar = findViewById(R.id.seek_bar3);
-        tvVivian = findViewById(R.id.tv_option1);
-        tvMartin = findViewById(R.id.tv_option2);
-        tvOmar = findViewById(R.id.tv_option3);
+        tvVivian = findViewById(R.id.tv_percent1);
+        tvMartin = findViewById(R.id.tv_percent2);
+        tvOmar = findViewById(R.id.tv_percent3);
         // Se obtienen la data de la base de datos donde el campo voto es igual a los nombres de los candidatos
         Query queryVivian = myRef.orderByChild("Voto").equalTo("Vivían Valenzuela");
         Query queryMartin = myRef.orderByChild("Voto").equalTo("Martín Candanedo");
