@@ -27,34 +27,19 @@
 
     <RadioButton
         android:id="@+id/rbCandidato1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/MyRadioButtonStyle"
+        android:layout_width="319dp"
+        android:layout_height="163dp"
         android:text="RadioButton"
-        tools:layout_editor_absoluteX="187dp"
-        tools:layout_editor_absoluteY="231dp" />
-
-    <RadioButton
-        android:id="@+id/rbCandidato2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RadioButton"
-        tools:layout_editor_absoluteX="187dp"
-        tools:layout_editor_absoluteY="327dp" />
-
-    <RadioButton
-        android:id="@+id/rbCandidato3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RadioButton"
-        tools:layout_editor_absoluteX="187dp"
-        tools:layout_editor_absoluteY="427dp" />
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="218dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Votar"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="542dp" />
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="632dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
