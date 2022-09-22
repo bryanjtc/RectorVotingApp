@@ -23,7 +23,7 @@ public class Votos extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("data");
-    Long votosVivian, votosMartin, votosOmar;
+    Long votosVivian = 0L, votosMartin = 0L, votosOmar = 0L;
     SeekBar sbVivian, sbMartin, sbOmar;
     TextView tvVivian, tvMartin, tvOmar;
     Button btnRegresar;
@@ -32,13 +32,13 @@ public class Votos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_votos);
-        double totalVotos, porcentajeVivian, porcentajeMartin, porcentajeOmar;
         sbVivian = findViewById(R.id.seek_bar1);
         sbMartin = findViewById(R.id.seek_bar2);
         sbOmar = findViewById(R.id.seek_bar3);
         tvVivian = findViewById(R.id.tv_percent1);
         tvMartin = findViewById(R.id.tv_percent2);
         tvOmar = findViewById(R.id.tv_percent3);
+        btnRegresar = findViewById(R.id.btn_salir);
         // Se obtienen la data de la base de datos donde el campo voto es igual a los nombres de los candidatos
         Query queryVivian = myRef.orderByChild("Voto").equalTo("Vivían Valenzuela");
         Query queryMartin = myRef.orderByChild("Voto").equalTo("Martín Candanedo");
@@ -49,6 +49,22 @@ public class Votos extends AppCompatActivity {
                 // Se cuenta la cantidad de veces donde el valor del campo voto de la base de datos es Vivian Valenzuela y se guarda el valor
                 Log.i("Votos", "Conteo para Vivian: " + snapshot.getChildrenCount());
                 votosVivian = snapshot.getChildrenCount();
+                Query totalVotos = myRef.orderByChild("Votado").equalTo(true);
+                totalVotos.addValueEventListener(new ValueEventListener() {
+                    // Se calcula el porcentaje de votos usando el total y la cantidad de votos
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        long total = snapshot.getChildrenCount();
+                        double porcentajeVivian = ((double) votosVivian / total) * 100;
+                        sbVivian.setProgress((int) porcentajeVivian);
+                        tvVivian.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeVivian));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
 
             @Override
@@ -63,6 +79,22 @@ public class Votos extends AppCompatActivity {
                 // Se cuenta la cantidad de veces donde el valor del campo voto de la base de datos es Martin Candanedo y se guarda el valor
                 Log.i("Votos", "Conteo para Martian: " + snapshot.getChildrenCount());
                 votosMartin = snapshot.getChildrenCount();
+                Query totalVotos = myRef.orderByChild("Votado").equalTo(true);
+                totalVotos.addValueEventListener(new ValueEventListener() {
+                    // Se calcula el porcentaje de votos usando el total y la cantidad de votos
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        long total = snapshot.getChildrenCount();
+                        double porcentajeMartin = ((double) votosMartin / total) * 100;
+                        sbMartin.setProgress((int) porcentajeMartin);
+                        tvMartin.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeMartin));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
 
             @Override
@@ -77,6 +109,22 @@ public class Votos extends AppCompatActivity {
                 // Se cuenta la cantidad de veces donde el valor del campo voto de la base de datos es Omar Aizpura y se guarda el valor
                 Log.i("Votos", "Conteo para Omar: " + snapshot.getChildrenCount());
                 votosOmar = snapshot.getChildrenCount();
+                Query totalVotos = myRef.orderByChild("Votado").equalTo(true);
+                totalVotos.addValueEventListener(new ValueEventListener() {
+                    // Se calcula el porcentaje de votos usando el total y la cantidad de votos
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        long total = snapshot.getChildrenCount();
+                        double porcentajeOmar = ((double) votosOmar / total) * 100;
+                        sbOmar.setProgress((int) porcentajeOmar);
+                        tvOmar.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeOmar));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
 
             @Override
@@ -85,17 +133,6 @@ public class Votos extends AppCompatActivity {
                 Log.w("Firebase database", "Failed to read value.", error.toException());
             }
         });
-        // Se calculan la cantidad de votos total, el porcentaje de votos para cada candidatos y se guardan en el seekbar y el textView perteneciente a cada candidato
-        totalVotos = votosVivian + votosMartin + votosOmar;
-        porcentajeVivian = (votosVivian / totalVotos) * 100;
-        porcentajeMartin = (votosMartin / totalVotos) * 100;
-        porcentajeOmar = (votosOmar / totalVotos) * 100;
-        sbVivian.setProgress((int) porcentajeVivian);
-        sbMartin.setProgress((int) porcentajeMartin);
-        sbOmar.setProgress((int) porcentajeOmar);
-        tvVivian.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeVivian));
-        tvMartin.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeMartin));
-        tvOmar.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeOmar));
         // Intent para regresar a la pantall inicial
         btnRegresar.setOnClickListener(view -> {
             Intent PantallaInicialIntent = new Intent(getApplicationContext(), MainActivity.class);
