@@ -10,56 +10,34 @@
         android:id="@+id/txt_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
         android:text="Recuento de votos"
         android:textSize="24sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="63dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="105dp" />
 
     <SeekBar
         android:id="@+id/seek_bar2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/seek_bar1"
-        android:layout_width="302dp"
-        android:layout_height="41dp"
+        android:layout_width="299dp"
+        android:layout_height="34dp"
         android:max="100"
         android:progress="25"
         android:progressDrawable="@drawable/progress_track"
         android:thumb="@android:color/transparent"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="441dp" />
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="219dp" />
 
-    <SeekBar
-        android:id="@+id/seek_bar1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_question"
-        android:layout_width="306dp"
-        android:layout_height="38dp"
-        android:max="100"
-        android:progress="25"
-        android:progressDrawable="@drawable/progress_track"
-        android:thumb="@android:color/transparent"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="247dp" />
-
-    <SeekBar
-        android:id="@+id/seek_bar3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/seek_bar2"
-        android:layout_width="306dp"
-        android:layout_height="41dp"
-        android:max="100"
-        android:progress="25"
-        android:progressDrawable="@drawable/progress_track"
-        android:thumb="@android:color/transparent"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="596dp" />
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="86dp"
+        android:layout_height="92dp"
+        app:srcCompat="@drawable/foto_martin_candanedo"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="119dp" />
 
     <TextView
         android:id="@+id/tv_option2"
-        app:layout_constraintEnd_toStartOf="@id/tv_percent2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/seek_bar1"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:gravity="center_vertical"
@@ -67,14 +45,44 @@
         android:paddingEnd="0dp"
         android:text="Python"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="401dp" />
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="153dp" />
+
+    <TextView
+        android:id="@+id/tv_percent2"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:gravity="center_vertical"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:text="25%"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="219dp" />
+
+    <SeekBar
+        android:id="@+id/seek_bar3"
+        android:layout_width="306dp"
+        android:layout_height="41dp"
+        android:max="100"
+        android:progress="25"
+        android:progressDrawable="@drawable/progress_track"
+        android:thumb="@android:color/transparent"
+        tools:layout_editor_absoluteX="63dp"
+        tools:layout_editor_absoluteY="584dp" />
+
+    <TextView
+        android:id="@+id/tv_percent1"
+        android:layout_width="28dp"
+        android:layout_height="41dp"
+        android:gravity="center_vertical"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:text="25%"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="584dp" />
 
     <TextView
         android:id="@+id/tv_option1"
-        app:layout_constraintEnd_toStartOf="@id/tv_percent1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_question"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:gravity="center_vertical"
@@ -82,61 +90,65 @@
         android:paddingEnd="0dp"
         android:text="Java"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="211dp" />
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="505dp" />
 
-    <TextView
-        android:id="@+id/tv_percent1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_question"
+    <Button
+        android:id="@+id/btn_salir"
         android:layout_width="wrap_content"
-        android:layout_height="37dp"
-        android:gravity="center_vertical"
-        android:paddingStart="0dp"
-        android:paddingEnd="0dp"
-        android:text="25%"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="248dp" />
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="645dp" />
 
-    <TextView
-        android:id="@+id/tv_percent3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/seek_bar2"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:gravity="center_vertical"
-        android:paddingStart="0dp"
-        android:paddingEnd="0dp"
-        android:text="25%"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="597dp" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="88dp"
+        android:layout_height="94dp"
+        app:srcCompat="@drawable/foto_omar_aizpurua"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="306dp" />
+
+    <SeekBar
+        android:id="@+id/seek_bar1"
+        android:layout_width="300dp"
+        android:layout_height="33dp"
+        android:max="100"
+        android:progress="25"
+        android:progressDrawable="@drawable/progress_track"
+        android:thumb="@android:color/transparent"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="413dp" />
 
     <TextView
         android:id="@+id/tv_option3"
-        app:layout_constraintEnd_toStartOf="@id/tv_percent3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/seek_bar2"
         android:layout_width="wrap_content"
-        android:layout_height="39dp"
+        android:layout_height="32dp"
         android:gravity="center_vertical"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="Php"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="558dp" />
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="333dp" />
 
     <TextView
-        android:id="@+id/tv_percent2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/seek_bar1"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_percent3"
+        android:layout_width="27dp"
         android:layout_height="34dp"
         android:gravity="center_vertical"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:text="25%"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="446dp" />
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="412dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="85dp"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/foto_vivian_valenzuela"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="485dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
