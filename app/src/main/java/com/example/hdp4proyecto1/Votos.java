@@ -62,7 +62,8 @@ public class Votos extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
+                        // Si existe algun error con la base de datos al leer los estudiantes que votaron se muestra un warning en log
+                        Log.w("Firebase database", "Failed to read value.", error.toException());
                     }
                 });
             }
@@ -92,7 +93,8 @@ public class Votos extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
+                        // Si existe algun error con la base de datos al leer los estudiantes que votaron se muestra un warning en log
+                        Log.w("Firebase database", "Failed to read value.", error.toException());
                     }
                 });
             }
@@ -122,7 +124,8 @@ public class Votos extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
+                        // Si existe algun error con la base de datos al leer los estudiantes que votaron se muestra un warning en log
+                        Log.w("Firebase database", "Failed to read value.", error.toException());
                     }
                 });
             }
