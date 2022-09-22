@@ -43,6 +43,11 @@
             android:singleLine="true"
             android:textColorHint="#78909C" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <Button
             android:id="@+id/btn_votar"
             android:layout_width="match_parent"
@@ -50,7 +55,8 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="40dp"
             android:layout_marginRight="15dp"
-            android:text="@string/votar" />
+            android:text="@string/votar"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

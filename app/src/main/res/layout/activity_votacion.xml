@@ -1,89 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Votacion">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="304dp"
-        android:layout_height="59dp"
-        android:text="@string/votaci_n_de_nuevo_rector_de_la_universidad"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/linearlayoutx"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txt_candidatos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/candidatos_a_rector"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btnvotar"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <RadioButton
-            android:id="@+id/rbCandidato1"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="124dp"
-            android:layout_marginBottom="10dp"
-            android:drawableStart="@drawable/custom_btn_radio_cand3"
-            android:drawablePadding="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="@string/viv_an_valenzuela"
-            android:textSize="18sp" />
+            android:layout_height="150dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/votaci_n_de_nuevo_rector_de_la_universidad"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-        <RadioButton
-            android:id="@+id/rbCandidato2"
+        <TextView
+            android:id="@+id/txt_candidatos"
             android:layout_width="match_parent"
-            android:layout_height="124dp"
-            android:layout_marginBottom="10dp"
-            android:drawableStart="@drawable/custom_btn_radio_cand2"
-            android:drawablePadding="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="@string/omar_aizpurua"
-            android:textSize="18sp" />
+            android:layout_height="75dp"
+            android:layout_weight="0.5"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/candidatos_a_rector"
+            android:textSize="20sp" />
 
-        <RadioButton
-            android:id="@+id/rbCandidato3"
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            tools:ignore="MissingConstraints">
+
+            <RadioButton
+                android:id="@+id/rbCandidato1"
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/custom_btn_radio_cand3"
+                android:drawablePadding="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/viv_an_valenzuela"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rbCandidato2"
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/custom_btn_radio_cand2"
+                android:drawablePadding="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/omar_aizpurua"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rbCandidato3"
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:drawableStart="@drawable/custom_btn_radio_cand1"
+                android:drawablePadding="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/mart_n_candanedo"
+                android:textSize="18sp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button"
             android:layout_width="match_parent"
-            android:layout_height="124dp"
-            android:drawableStart="@drawable/custom_btn_radio_cand1"
-            android:drawablePadding="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="@string/mart_n_candanedo"
-            android:textSize="18sp" />
-    </RadioGroup>
+            android:text="@string/btnvotar"
+            android:layout_height="76dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="15dp"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

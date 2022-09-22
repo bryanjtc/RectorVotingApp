@@ -6,201 +6,198 @@
     android:layout_height="match_parent"
     tools:context=".Votos">
 
+
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearlayoutx"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="52dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btn_salir"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_titulo">
-
-        <LinearLayout
-            android:id="@+id/linearLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_option1"
-                android:layout_width="match_parent"
-                android:layout_height="124dp"
-                android:layout_marginBottom="10dp"
-                android:drawablePadding="10dp"
-                android:gravity="center_vertical"
-                android:text="@string/viv_an_valenzuela"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:drawableStartCompat="@drawable/foto_vivian_valenzuela"
-                tools:layout_editor_absoluteX="154dp"
-                tools:layout_editor_absoluteY="505dp" />
-
-            <LinearLayout
-                android:id="@+id/resultado1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_percent1"
-                    android:layout_width="85dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:paddingStart="0dp"
-                    android:paddingEnd="0dp"
-                    tools:layout_editor_absoluteX="35dp"
-                    tools:layout_editor_absoluteY="584dp" />
-
-                <SeekBar
-                    android:id="@+id/seek_bar1"
-                    android:layout_width="match_parent"
-                    android:layout_height="34dp"
-                    android:max="100"
-                    android:progress="25"
-                    android:progressDrawable="@drawable/progress_track"
-                    android:thumb="@android:color/transparent"
-                    tools:layout_editor_absoluteX="66dp"
-                    tools:layout_editor_absoluteY="413dp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/LinearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="67dp">
-
-            <TextView
-                android:id="@+id/tv_option2"
-                android:layout_width="match_parent"
-                android:layout_height="124dp"
-                android:layout_marginBottom="10dp"
-                android:drawablePadding="10dp"
-                android:gravity="center_vertical"
-                android:text="@string/omar_aizpurua"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:drawableStartCompat="@drawable/custom_btn_radio_cand2" />
-
-            <LinearLayout
-                android:id="@+id/resultado2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_percent2"
-                    android:layout_width="85dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:paddingStart="0dp"
-                    android:paddingEnd="0dp"
-                    tools:layout_editor_absoluteX="47dp"
-                    tools:layout_editor_absoluteY="219dp" />
-
-                <SeekBar
-                    android:id="@+id/seek_bar2"
-                    android:layout_width="match_parent"
-                    android:layout_height="34dp"
-                    android:max="100"
-                    android:progress="25"
-                    android:progressDrawable="@drawable/progress_track"
-                    android:thumb="@android:color/transparent"
-                    tools:layout_editor_absoluteX="73dp"
-                    tools:layout_editor_absoluteY="219dp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/LinearLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="67dp">
-
-            <TextView
-                android:id="@+id/tv_option3"
-                android:layout_width="match_parent"
-                android:layout_height="124dp"
-                android:layout_marginBottom="10dp"
-                android:drawablePadding="10dp"
-                android:gravity="center_vertical"
-                android:text="@string/mart_n_candanedo"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:drawableStartCompat="@drawable/foto_martin_candanedo"
-                tools:layout_editor_absoluteX="154dp"
-                tools:layout_editor_absoluteY="333dp" />
-
-            <LinearLayout
-                android:id="@+id/resultado3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_percent3"
-                    android:layout_width="85dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:paddingStart="0dp"
-                    android:paddingEnd="0dp"
-                    tools:layout_editor_absoluteX="39dp"
-                    tools:layout_editor_absoluteY="412dp" />
-
-                <SeekBar
-                    android:id="@+id/seek_bar3"
-                    android:layout_width="match_parent"
-                    android:layout_height="34dp"
-                    android:max="100"
-                    android:progress="25"
-                    android:progressDrawable="@drawable/progress_track"
-                    android:thumb="@android:color/transparent"
-                    tools:layout_editor_absoluteX="63dp"
-                    tools:layout_editor_absoluteY="584dp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/txt_titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:layout_marginBottom="31dp"
-        android:text="@string/recuento_de_votos"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_salir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="55dp"
-        android:text="@string/salir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/recuento_de_votos"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="124dp"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/viv_an_valenzuela"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableStartCompat="@drawable/foto_vivian_valenzuela"
+                    tools:layout_editor_absoluteX="154dp"
+                    tools:layout_editor_absoluteY="505dp" />
+
+                <LinearLayout
+                    android:id="@+id/resultado1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_percent1"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        tools:layout_editor_absoluteX="35dp"
+                        tools:layout_editor_absoluteY="584dp" />
+
+                    <SeekBar
+                        android:id="@+id/seek_bar1"
+                        android:layout_width="match_parent"
+                        android:layout_height="34dp"
+                        android:max="100"
+                        android:progress="25"
+                        android:progressDrawable="@drawable/progress_track"
+                        android:thumb="@android:color/transparent"
+                        tools:layout_editor_absoluteX="66dp"
+                        tools:layout_editor_absoluteY="413dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="67dp">
+
+                <TextView
+                    android:id="@+id/tv_option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="124dp"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/omar_aizpurua"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableStartCompat="@drawable/custom_btn_radio_cand2" />
+
+                <LinearLayout
+                    android:id="@+id/resultado2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_percent2"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        tools:layout_editor_absoluteX="47dp"
+                        tools:layout_editor_absoluteY="219dp" />
+
+                    <SeekBar
+                        android:id="@+id/seek_bar2"
+                        android:layout_width="match_parent"
+                        android:layout_height="34dp"
+                        android:max="100"
+                        android:progress="25"
+                        android:progressDrawable="@drawable/progress_track"
+                        android:thumb="@android:color/transparent"
+                        tools:layout_editor_absoluteX="73dp"
+                        tools:layout_editor_absoluteY="219dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="67dp">
+
+                <TextView
+                    android:id="@+id/tv_option3"
+                    android:layout_width="match_parent"
+                    android:layout_height="124dp"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/mart_n_candanedo"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableStartCompat="@drawable/foto_martin_candanedo"
+                    tools:layout_editor_absoluteX="154dp"
+                    tools:layout_editor_absoluteY="333dp" />
+
+                <LinearLayout
+                    android:id="@+id/resultado3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_percent3"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        tools:layout_editor_absoluteX="39dp"
+                        tools:layout_editor_absoluteY="412dp" />
+
+                    <SeekBar
+                        android:id="@+id/seek_bar3"
+                        android:layout_width="match_parent"
+                        android:layout_height="34dp"
+                        android:max="100"
+                        android:progress="25"
+                        android:progressDrawable="@drawable/progress_track"
+                        android:thumb="@android:color/transparent"
+                        tools:layout_editor_absoluteX="63dp"
+                        tools:layout_editor_absoluteY="584dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_salir"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/salir"
+            android:textSize="20sp" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
