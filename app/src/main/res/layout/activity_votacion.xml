@@ -31,31 +31,33 @@
         android:layout_height="wrap_content"
         android:text="Votar"
         tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="632dp" />
+        tools:layout_editor_absoluteY="632dp"
+        tools:ignore="MissingConstraints" />
 
     <RadioGroup
         android:layout_width="328dp"
         android:layout_height="371dp"
         tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="247dp">
+        tools:layout_editor_absoluteY="247dp"
+        tools:ignore="MissingConstraints">
 
         <RadioButton
             android:id="@+id/rbCandidato1"
-            style="@style/MyRadioButtonStyle"
+            style="@style/MyRadioButtonStyle1"
             android:layout_width="328dp"
             android:layout_height="124dp"
             android:text="RadioButton" />
 
         <RadioButton
             android:id="@+id/rbCandidato2"
-            style="@style/MyRadioButtonStyle"
+            style="@style/MyRadioButtonStyle2"
             android:layout_width="match_parent"
             android:layout_height="123dp"
             android:text="RadioButton" />
 
         <RadioButton
             android:id="@+id/rbCandidato3"
-            style="@style/MyRadioButtonStyle"
+            style="@style/MyRadioButtonStyle3"
             android:layout_width="match_parent"
             android:layout_height="126dp"
             android:text="RadioButton" />
