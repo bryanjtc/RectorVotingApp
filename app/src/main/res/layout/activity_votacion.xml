@@ -18,11 +18,35 @@
         tools:layout_editor_absoluteY="55dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txt_candidatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Candidatos a rector:"
         tools:layout_editor_absoluteX="61dp"
         tools:layout_editor_absoluteY="160dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioButton"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioButton"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioButton"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="443dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
