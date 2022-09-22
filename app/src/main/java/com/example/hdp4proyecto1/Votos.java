@@ -24,7 +24,7 @@ public class Votos extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("data");
     Long votosVivian = 0L, votosMartin = 0L, votosOmar = 0L;
-    ProgressBar sbVivian, sbMartin, sbOmar;
+    ProgressBar pbVivian, pbMartin, pbOmar;
     TextView tvVivian, tvMartin, tvOmar;
     Button btnRegresar;
 
@@ -32,9 +32,9 @@ public class Votos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_votos);
-        sbVivian = findViewById(R.id.seek_bar1);
-        sbMartin = findViewById(R.id.seek_bar2);
-        sbOmar = findViewById(R.id.seek_bar3);
+        pbVivian = findViewById(R.id.progress_bar1);
+        pbMartin = findViewById(R.id.progress_bar2);
+        pbOmar = findViewById(R.id.progress_bar3);
         tvVivian = findViewById(R.id.tv_percent1);
         tvMartin = findViewById(R.id.tv_percent2);
         tvOmar = findViewById(R.id.tv_percent3);
@@ -56,7 +56,7 @@ public class Votos extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         long total = snapshot.getChildrenCount();
                         double porcentajeVivian = ((double) votosVivian / total) * 100;
-                        sbVivian.setProgress((int) porcentajeVivian);
+                        pbVivian.setProgress((int) porcentajeVivian);
                         tvVivian.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeVivian));
                     }
 
@@ -87,7 +87,7 @@ public class Votos extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         long total = snapshot.getChildrenCount();
                         double porcentajeMartin = ((double) votosMartin / total) * 100;
-                        sbMartin.setProgress((int) porcentajeMartin);
+                        pbMartin.setProgress((int) porcentajeMartin);
                         tvMartin.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeMartin));
                     }
 
@@ -118,7 +118,7 @@ public class Votos extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         long total = snapshot.getChildrenCount();
                         double porcentajeOmar = ((double) votosOmar / total) * 100;
-                        sbOmar.setProgress((int) porcentajeOmar);
+                        pbOmar.setProgress((int) porcentajeOmar);
                         tvOmar.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeOmar));
                     }
 

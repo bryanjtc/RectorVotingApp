@@ -72,7 +72,7 @@
                         tools:layout_editor_absoluteY="584dp" />
 
                     <ProgressBar
-                        android:id="@+id/seek_bar1"
+                        android:id="@+id/progress_bar1"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="34dp"
@@ -121,7 +121,7 @@
                         tools:layout_editor_absoluteY="219dp" />
 
                     <ProgressBar
-                        android:id="@+id/seek_bar2"
+                        android:id="@+id/progress_bar2"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="34dp"
@@ -171,7 +171,7 @@
                         tools:layout_editor_absoluteY="412dp" />
 
                     <ProgressBar
-                        android:id="@+id/seek_bar3"
+                        android:id="@+id/progress_bar3"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="34dp"
