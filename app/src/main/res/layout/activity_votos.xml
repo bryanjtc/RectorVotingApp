@@ -43,7 +43,7 @@
         android:gravity="center_vertical"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
-        android:text="Python"
+        android:text="@string/mart_n_candanedo"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:layout_editor_absoluteX="154dp"
         tools:layout_editor_absoluteY="153dp" />
@@ -55,7 +55,6 @@
         android:gravity="center_vertical"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
-        android:text="25%"
         tools:layout_editor_absoluteX="47dp"
         tools:layout_editor_absoluteY="219dp" />
 
@@ -77,7 +76,6 @@
         android:gravity="center_vertical"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
-        android:text="25%"
         tools:layout_editor_absoluteX="35dp"
         tools:layout_editor_absoluteY="584dp" />
 
@@ -88,7 +86,7 @@
         android:gravity="center_vertical"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
-        android:text="Java"
+        android:text="@string/viv_an_valenzuela"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:layout_editor_absoluteX="154dp"
         tools:layout_editor_absoluteY="505dp" />
@@ -127,7 +125,7 @@
         android:gravity="center_vertical"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
-        android:text="Php"
+        android:text="@string/omar_aizpurua"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:layout_editor_absoluteX="154dp"
         tools:layout_editor_absoluteY="333dp" />
@@ -139,7 +137,6 @@
         android:gravity="center_vertical"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
-        android:text="25%"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="412dp" />
 
