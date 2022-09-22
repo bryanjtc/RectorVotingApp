@@ -35,6 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnvotar"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,21 +56,27 @@
             android:layout_width="match_parent"
             android:layout_height="124dp"
             android:drawableStart="@drawable/custom_btn_radio_cand3"
-            android:text="@string/viv_an_valenzuela" />
+            android:drawablePadding="10dp"
+            android:text="@string/viv_an_valenzuela"
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/rbCandidato2"
             android:layout_width="match_parent"
             android:layout_height="124dp"
             android:drawableStart="@drawable/custom_btn_radio_cand2"
-            android:text="@string/omar_aizpurua" />
+            android:drawablePadding="10dp"
+            android:text="@string/omar_aizpurua"
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/rbCandidato3"
             android:layout_width="match_parent"
             android:layout_height="124dp"
             android:drawableStart="@drawable/custom_btn_radio_cand1"
-            android:text="@string/mart_n_candanedo" />
+            android:drawablePadding="10dp"
+            android:text="@string/mart_n_candanedo"
+            android:textSize="18sp" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
