@@ -94,8 +94,8 @@ public class Votos extends AppCompatActivity {
         tvOmar.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeOmar));
         // Intent para regresar a la pantall inicial
         btnRegresar.setOnClickListener(view -> {
-            Intent TercerIntent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(TercerIntent);
+            Intent PantallaInicialIntent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(PantallaInicialIntent);
         });
     }
 }

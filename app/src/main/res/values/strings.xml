@@ -2,5 +2,11 @@
     <string name="app_name">Votación Rector UTP 2022</string>
     <string name="ingrese_la_cedula">Ingrese la cédula</string>
     <string name="_8_964_1552">8–964–1552</string>
-    <string name="votar">votar</string>
+    <string name="votar">ingresar</string>
+    <string name="votaci_n_de_nuevo_rector_de_la_universidad">Votación de Nuevo Rector De la Universidad</string>
+    <string name="candidatos_a_rector">Candidatos a rector:</string>
+    <string name="btnvotar">Votar</string>
+    <string name="viv_an_valenzuela">Vivían Valenzuela</string>
+    <string name="omar_aizpurua">Omar Aizpurua</string>
+    <string name="mart_n_candanedo">Martín Candanedo</string>
 </resources>
