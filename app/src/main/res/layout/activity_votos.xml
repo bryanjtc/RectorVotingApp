@@ -101,9 +101,9 @@
                     android:layout_marginBottom="10dp"
                     android:drawablePadding="10dp"
                     android:gravity="center_vertical"
-                    android:text="@string/omar_aizpurua"
+                    android:text="@string/mart_n_candanedo"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    app:drawableStartCompat="@drawable/foto_omar_aizpurua" />
+                    app:drawableStartCompat="@drawable/foto_martin_candanedo" />
 
                 <LinearLayout
                     android:id="@+id/resultado2"
@@ -150,9 +150,9 @@
                     android:layout_marginBottom="10dp"
                     android:drawablePadding="10dp"
                     android:gravity="center_vertical"
-                    android:text="@string/mart_n_candanedo"
+                    android:text="@string/omar_aizpurua"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    app:drawableStartCompat="@drawable/foto_martin_candanedo"
+                    app:drawableStartCompat="@drawable/foto_omar_aizpurua"
                     tools:layout_editor_absoluteX="154dp"
                     tools:layout_editor_absoluteY="333dp" />
 
