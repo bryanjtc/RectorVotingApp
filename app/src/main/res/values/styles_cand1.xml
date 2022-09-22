@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="MyRadioButtonStyle" parent="@android:style/Widget.CompoundButton.RadioButton">
+    <style name="MyRadioButtonStyle1" parent="@android:style/Widget.CompoundButton.RadioButton">
         <item name="android:button">@drawable/custom_btn_radio_cand1</item>s
+    </style>
+    <style name="MyRadioButtonStyle2" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/custom_btn_radio_cand2</item>s
+    </style>
+    <style name="MyRadioButtonStyle3" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/custom_btn_radio_cand3</item>s
     </style>
 </resources>
 
