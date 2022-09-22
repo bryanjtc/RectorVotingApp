@@ -33,8 +33,12 @@ public class Votos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_votos);
         double totalVotos, porcentajeVivian, porcentajeMartin, porcentajeOmar;
-        // Todo inicializar seekbar y button con los id del layout
-
+        sbVivian = findViewById(R.id.seek_bar1);
+        sbMartin = findViewById(R.id.seek_bar2);
+        sbOmar = findViewById(R.id.seek_bar3);
+        tvVivian = findViewById(R.id.tv_option1);
+        tvMartin = findViewById(R.id.tv_option2);
+        tvOmar = findViewById(R.id.tv_option3);
         // Se obtienen la data de la base de datos donde el campo voto es igual a los nombres de los candidatos
         Query queryVivian = myRef.orderByChild("Voto").equalTo("Vivían Valenzuela");
         Query queryMartin = myRef.orderByChild("Voto").equalTo("Martín Candanedo");
