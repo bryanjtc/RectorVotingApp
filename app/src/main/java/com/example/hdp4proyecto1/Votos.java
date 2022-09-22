@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.SeekBar;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,7 +24,7 @@ public class Votos extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("data");
     Long votosVivian = 0L, votosMartin = 0L, votosOmar = 0L;
-    SeekBar sbVivian, sbMartin, sbOmar;
+    ProgressBar sbVivian, sbMartin, sbOmar;
     TextView tvVivian, tvMartin, tvOmar;
     Button btnRegresar;
 

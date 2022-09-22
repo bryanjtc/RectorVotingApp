@@ -77,6 +77,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="34dp"
                         android:max="100"
+                        android:min="0"
                         android:progress="25"
                         tools:layout_editor_absoluteX="66dp"
                         tools:layout_editor_absoluteY="413dp" />
@@ -126,6 +127,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="34dp"
                         android:max="100"
+                        android:min="0"
                         android:progress="25"
                         tools:layout_editor_absoluteX="73dp"
                         tools:layout_editor_absoluteY="219dp" />
@@ -176,6 +178,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="34dp"
                         android:max="100"
+                        android:min="0"
                         android:progress="25"
                         tools:layout_editor_absoluteX="63dp"
                         tools:layout_editor_absoluteY="584dp" />
