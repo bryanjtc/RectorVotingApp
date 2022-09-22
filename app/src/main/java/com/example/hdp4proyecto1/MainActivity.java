@@ -1,5 +1,6 @@
 package com.example.hdp4proyecto1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -67,8 +68,15 @@ public class MainActivity extends AppCompatActivity {
                                     String uid = childSnapshot.getKey();
                                     Log.d("Firebase database", "Key is: " + uid);
                                     Boolean votado = childSnapshot.child("Votado").getValue(Boolean.class);
-                                    // Todo eliminar toast
-                                    Toast.makeText(getApplicationContext(), Boolean.TRUE.equals(votado) ? "Ha votado" : "No ha votado", Toast.LENGTH_LONG).show();
+                                    // Intent para ir a la pantalla de votacion y enviar el uid del usuario si no ha votado. De lo contrario va a la pantalla de los resultados
+                                    Intent VotacionIntent = new Intent(getApplicationContext(), Votacion.class);
+                                    Intent ResultadosIntent = new Intent(getApplicationContext(), Votos.class);
+                                    VotacionIntent.putExtra("uid", uid);
+                                    if (Boolean.TRUE.equals(votado)) {
+                                        startActivity(ResultadosIntent);
+                                    } else {
+                                        startActivity(VotacionIntent);
+                                    }
                                 }
                             } else {
                                 // Si no existe la cedula se muestra en log de debug y en un toast

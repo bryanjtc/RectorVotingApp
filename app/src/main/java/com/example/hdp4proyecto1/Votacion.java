@@ -27,22 +27,24 @@ public class Votacion extends AppCompatActivity {
         setContentView(R.layout.activity_votacion);
         String[] candidatos = new String[]{"Vivían Valenzuela", "Omar Aizpurua", "Martín Candanedo"};
         AtomicReference<Integer> seleccion = new AtomicReference<>(-1);
-        // Todo inicializar radiobuttons y button con los id del layout
-
+        Intent PantallaInicialIntent = getIntent();
+        String uid = PantallaInicialIntent.getStringExtra("uid");
+        btnVotar = findViewById(R.id.button);
+        rbCandidato1 = findViewById(R.id.rbCandidato1);
+        rbCandidato2 = findViewById(R.id.rbCandidato2);
+        rbCandidato3 = findViewById(R.id.rbCandidato3);
         rbCandidato1.setOnClickListener(view -> seleccion.set(0));
         rbCandidato2.setOnClickListener(view -> seleccion.set(1));
         rbCandidato3.setOnClickListener(view -> seleccion.set(2));
         btnVotar.setOnClickListener(view -> {
             if (seleccion.get() != -1) {
                 // Si el usuario ha seleccionado un candidato se guarda el valor en el campo voto de la base de datos y se cambia el valor del campo votado a true
-                // Todo utilizar variable key del intent
-                myRef.child("key").child("Voto").setValue(candidatos[seleccion.get()]);
-                // Todo utilizar variable key del intent
-                myRef.child("key").child("Votado").setValue(true);
+                myRef.child(uid).child("Voto").setValue(candidatos[seleccion.get()]);
+                myRef.child(uid).child("Votado").setValue(true);
                 Log.d("Votacion", "Voto es: " + candidatos[seleccion.get()]);
                 // Intent para ver la pantalla de los resultados
-                Intent SegundoIntent = new Intent(getApplicationContext(), Votos.class);
-                startActivity(SegundoIntent);
+                Intent ResultadosIntent = new Intent(getApplicationContext(), Votos.class);
+                startActivity(ResultadosIntent);
             } else {
                 // Si el usuario no ha seleccionado a un candidato se muestra un toast
                 Toast.makeText(getApplicationContext(), "Debe seleccionar un candidato",
