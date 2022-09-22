@@ -26,7 +26,7 @@
         tools:layout_editor_absoluteY="160dp" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/rbCandidato1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RadioButton"
@@ -34,7 +34,7 @@
         tools:layout_editor_absoluteY="231dp" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/rbCandidato2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RadioButton"
@@ -42,7 +42,7 @@
         tools:layout_editor_absoluteY="327dp" />
 
     <RadioButton
-        android:id="@+id/radioButton3"
+        android:id="@+id/rbCandidato3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RadioButton"
