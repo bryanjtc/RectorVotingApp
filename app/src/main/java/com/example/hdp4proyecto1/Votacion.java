@@ -1,5 +1,6 @@
 package com.example.hdp4proyecto1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -39,6 +40,9 @@ public class Votacion extends AppCompatActivity {
                 // Todo utilizar variable key del intent
                 myRef.child("key").child("Votado").setValue(true);
                 Log.d("Votacion", "Voto es: " + candidatos[seleccion.get()]);
+                // Intent para ver la pantalla de los resultados
+                Intent SegundoIntent = new Intent(getApplicationContext(), Votos.class);
+                startActivity(SegundoIntent);
             } else {
                 // Si el usuario no ha seleccionado a un candidato se muestra un toast
                 Toast.makeText(getApplicationContext(), "Debe seleccionar un candidato",

@@ -1,7 +1,9 @@
 package com.example.hdp4proyecto1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -24,6 +26,7 @@ public class Votos extends AppCompatActivity {
     Long votosVivian, votosMartin, votosOmar;
     SeekBar sbVivian, sbMartin, sbOmar;
     TextView tvVivian, tvMartin, tvOmar;
+    Button btnRegresar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,7 @@ public class Votos extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // Se cuenta la cantidad de veces donde el valor del campo voto de la base de datos es Vivian Valenzuela y se guarda el valor
-                Log.i("Votos", "Conteo para Vivian: "+snapshot.getChildrenCount());
+                Log.i("Votos", "Conteo para Vivian: " + snapshot.getChildrenCount());
                 votosVivian = snapshot.getChildrenCount();
             }
 
@@ -54,7 +57,7 @@ public class Votos extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // Se cuenta la cantidad de veces donde el valor del campo voto de la base de datos es Martin Candanedo y se guarda el valor
-                Log.i("Votos", "Conteo para Martian: "+snapshot.getChildrenCount());
+                Log.i("Votos", "Conteo para Martian: " + snapshot.getChildrenCount());
                 votosMartin = snapshot.getChildrenCount();
             }
 
@@ -68,7 +71,7 @@ public class Votos extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // Se cuenta la cantidad de veces donde el valor del campo voto de la base de datos es Omar Aizpura y se guarda el valor
-                Log.i("Votos", "Conteo para Omar: "+snapshot.getChildrenCount());
+                Log.i("Votos", "Conteo para Omar: " + snapshot.getChildrenCount());
                 votosOmar = snapshot.getChildrenCount();
             }
 
@@ -80,14 +83,19 @@ public class Votos extends AppCompatActivity {
         });
         // Se calculan la cantidad de votos total, el porcentaje de votos para cada candidatos y se guardan en el seekbar y el textView perteneciente a cada candidato
         totalVotos = votosVivian + votosMartin + votosOmar;
-        porcentajeVivian = (votosVivian/totalVotos)*100;
-        porcentajeMartin = (votosMartin/totalVotos)*100;
-        porcentajeOmar = (votosOmar/totalVotos)*100;
+        porcentajeVivian = (votosVivian / totalVotos) * 100;
+        porcentajeMartin = (votosMartin / totalVotos) * 100;
+        porcentajeOmar = (votosOmar / totalVotos) * 100;
         sbVivian.setProgress((int) porcentajeVivian);
         sbMartin.setProgress((int) porcentajeMartin);
         sbOmar.setProgress((int) porcentajeOmar);
-        tvVivian.setText(String.format(Locale.getDefault(), "%.0f%%",porcentajeVivian));
-        tvMartin.setText(String.format(Locale.getDefault(),"%.0f%%",porcentajeMartin));
-        tvOmar.setText(String.format(Locale.getDefault(),"%.0f%%",porcentajeOmar));
+        tvVivian.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeVivian));
+        tvMartin.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeMartin));
+        tvOmar.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeOmar));
+        // Intent para regresar a la pantall inicial
+        btnRegresar.setOnClickListener(view -> {
+            Intent TercerIntent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(TercerIntent);
+        });
     }
 }
