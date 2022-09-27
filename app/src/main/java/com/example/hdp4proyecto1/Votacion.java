@@ -18,14 +18,14 @@ public class Votacion extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("data");
-    RadioButton rbCandidato1, rbCandidato2, rbCandidato3;
+    RadioButton rbCandidato1, rbCandidato2, rbCandidato3, rbCandidatoNA;
     Button btnVotar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_votacion);
-        String[] candidatos = new String[]{"Vivían Valenzuela", "Omar Aizpurua", "Martín Candanedo"};
+        String[] candidatos = new String[]{"Vivían Valenzuela", "Omar Aizpurua", "Martín Candanedo", "Ninguno"};
         AtomicReference<Integer> seleccion = new AtomicReference<>(-1);
         Intent PantallaInicialIntent = getIntent();
         String uid = PantallaInicialIntent.getStringExtra("uid");
@@ -33,9 +33,11 @@ public class Votacion extends AppCompatActivity {
         rbCandidato1 = findViewById(R.id.rbCandidato1);
         rbCandidato2 = findViewById(R.id.rbCandidato2);
         rbCandidato3 = findViewById(R.id.rbCandidato3);
+        rbCandidatoNA = findViewById(R.id.rbCandidatoNA);
         rbCandidato1.setOnClickListener(view -> seleccion.set(0));
         rbCandidato2.setOnClickListener(view -> seleccion.set(1));
         rbCandidato3.setOnClickListener(view -> seleccion.set(2));
+        rbCandidatoNA.setOnClickListener(view -> seleccion.set(3));
         btnVotar.setOnClickListener(view -> {
             if (seleccion.get() != -1) {
                 // Si el usuario ha seleccionado un candidato se guarda el valor en el campo voto de la base de datos y se cambia el valor del campo votado a true

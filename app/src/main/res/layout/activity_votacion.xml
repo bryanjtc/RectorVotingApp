@@ -37,6 +37,9 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
+            android:isScrollContainer="true"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbars="vertical"
             tools:ignore="MissingConstraints">
 
             <RadioButton
@@ -72,6 +75,17 @@
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
                 android:text="@string/mart_n_candanedo"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rbCandidatoNA"
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:drawableStart="@drawable/custom_btn_radio_cand0"
+                android:drawablePadding="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/ninguno"
                 android:textSize="18sp" />
         </RadioGroup>
 

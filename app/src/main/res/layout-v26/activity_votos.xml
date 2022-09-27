@@ -20,7 +20,7 @@
         <TextView
             android:id="@+id/txt_titulo"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:gravity="center_horizontal|center_vertical"
             android:text="@string/recuento_de_votos"
             android:textSize="24sp"
@@ -33,7 +33,10 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbars="vertical">
 
             <LinearLayout
                 android:id="@+id/linearLayout1"
@@ -45,7 +48,7 @@
                 <TextView
                     android:id="@+id/tv_option1"
                     android:layout_width="match_parent"
-                    android:layout_height="124dp"
+                    android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
                     android:drawablePadding="10dp"
                     android:gravity="center_vertical"
@@ -97,7 +100,7 @@
                 <TextView
                     android:id="@+id/tv_option2"
                     android:layout_width="match_parent"
-                    android:layout_height="124dp"
+                    android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
                     android:drawablePadding="10dp"
                     android:gravity="center_vertical"
@@ -139,6 +142,7 @@
                 android:id="@+id/LinearLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="67dp">
@@ -146,7 +150,7 @@
                 <TextView
                     android:id="@+id/tv_option3"
                     android:layout_width="match_parent"
-                    android:layout_height="124dp"
+                    android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
                     android:drawablePadding="10dp"
                     android:gravity="center_vertical"
@@ -174,6 +178,57 @@
 
                     <ProgressBar
                         android:id="@+id/progress_bar3"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="34dp"
+                        android:max="100"
+                        android:min="0"
+                        android:progress="25"
+                        tools:layout_editor_absoluteX="63dp"
+                        tools:layout_editor_absoluteY="584dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="67dp">
+
+                <TextView
+                    android:id="@+id/tv_option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/ninguno"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableStartCompat="@drawable/custom_btn_radio_cand0"
+                    tools:layout_editor_absoluteX="154dp"
+                    tools:layout_editor_absoluteY="333dp" />
+
+                <LinearLayout
+                    android:id="@+id/resultado4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_percent4"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        tools:layout_editor_absoluteX="39dp"
+                        tools:layout_editor_absoluteY="412dp" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar4"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="34dp"
